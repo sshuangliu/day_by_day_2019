@@ -8,7 +8,7 @@ s = socks.socksocket()
 s.setproxy(
     socks.PROXY_TYPE_SOCKS5,'127.0.0.1',1089)
 
-s.connect(('10.191.144.4',22))
+s.connect(('4.4.4.4',22))
 
 
 # 设置全局代理
