@@ -23,7 +23,7 @@ s.connect(('10.191.144.4',22))
 # 实例化一个transport对象
 trans = paramiko.Transport(s)
 # 建立连接
-trans.connect(username='ro', password='ro@ucloud.cn')
+trans.connect(username='ro', password='ro')
 
 # 将sshclient的对象的transport指定为以上的trans
 ssh = paramiko.SSHClient()

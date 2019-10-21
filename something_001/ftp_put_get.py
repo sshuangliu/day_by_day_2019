@@ -23,9 +23,9 @@ class FtpUploadTracker():
             return print(str(percentComplete) + " percent complete")
 
 
-ftp = FTP('172.28.226.229')
+ftp = FTP('1.1.1.1')
 ftp.encoding = 'utf-8'
-ftp.login('admin','admin@ucloud.cn')
+ftp.login('admin','admin')
 time.sleep(1)
 print(ftp.getwelcome())
 ftp.pwd()

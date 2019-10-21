@@ -9,9 +9,9 @@ logger = logging.getLogger("netmiko")
 
 CE6810 = {
     "device_type":"huawei_vrpv8",
-    'host':'10.191.147.190',
-    'username': 'uCDrw',
-    'password': 'uCDrw@ucloud.cn',
+    'host':'10.1.1.1',
+    'username': 'admin',
+    'password': 'admin',
     'global_delay_factor': 2,
 }
 net_connect = netmiko.ConnectHandler(**CE6810)

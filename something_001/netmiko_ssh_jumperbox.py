@@ -15,17 +15,17 @@ logger = logging.getLogger("netmiko")
 jumperbox = {
     "device_type":"linux",
     'host':'192.168.168.106',
-    'username' : 'shuang.liu',
-    'password' : '020773',}
+    'username' : 'admin',
+    'password' : 'admin',}
 
 net_connect = netmiko.ConnectHandler(**jumperbox)
 print ("SSH prompt: {}".format(net_connect.find_prompt()))
-net_connect.write_channel("ssh -l uCDrw 10.191.147.190\n") #### or a ssh 10.30.1.11
+net_connect.write_channel("ssh -l admin 10.191.147.190\n") #### or a ssh 10.30.1.11
 time.sleep(6)
 output = net_connect.read_channel()
 print(output)
 if 'ssword' in output:
-    net_connect.write_channel('uCDrw@ucloud.cn\n')
+    net_connect.write_channel('admin\n')
 output = net_connect.read_channel()
 
 # Verify you logged in successfully
