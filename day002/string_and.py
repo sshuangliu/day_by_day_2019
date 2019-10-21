@@ -31,4 +31,12 @@ print(init_str_03)
 
 ##4:完成课堂作业(1)
 #补齐被删除的代码
+department1 = 'Security'
+department2 = 'Python'
+depart1_m = 'cq_bomb'
+depart2_m = 'shuang_liu'
+COURSE_FEES_SEC = 456789.123456
+COURSE_FEES_Python = 1234.3456
+
+
 
