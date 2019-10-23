@@ -73,5 +73,5 @@ while True:
     else:
         break
 print(str2)
-print('接口\t\t:{0[0]}\nip地址\t:{0[1]}\n状态\t\t:{0[2]}'.format(str2))
+print('接口\t\t:{0[0]}\nip地址\t\t:{0[1]}\n状态\t\t:{0[2]}'.format(str2))
 
