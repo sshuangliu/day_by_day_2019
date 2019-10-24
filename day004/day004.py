@@ -26,3 +26,4 @@ print(ipv4add)
 print(netmask)
 print(broadcast)
 print(macadd)
+haha
