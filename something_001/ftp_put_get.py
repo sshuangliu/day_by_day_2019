@@ -4,6 +4,7 @@ from ftplib import FTP
 import time
 import os
 
+
 #监控上传下载文件百分比 进度
 class FtpUploadTracker():
     sizeWritten = 0
@@ -60,5 +61,3 @@ file_handler.close()
 
 ftp.quit()
 
-
-haha
