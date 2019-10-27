@@ -5,11 +5,18 @@
 #@File  : temp_test_001.py
 
 
-import re
+import os
+#a = os.popen('ip add').read()
+#print(a)
 
-port_list = ['eth 1/101/1/42', 'eth 1/101/1/26', 'eth 1/101/1/23', 'eth 1/101/1/7', 'eth 1/101/2/46', 'eth 1/101/1/34',
-             'eth 1/101/1/18', 'eth 1/101/1/13', 'eth 1/101/1/32', 'eth 1/101/1/25', 'eth 1/101/1/45', 'eth 1/101/2/8']
 
+os.chdir('day007/test')
+print(os.getcwd())
 
-par = re.match(r'eth \d{1,3}/\d{1,3}/\d{1,3}/(\d{1,3})', port_list[0]).group(1)
-print(par)
+for root ,dirs, files in os.walk('.',topdown=False):
+    for key_wd_file in files:
+        file_path = os.path.join(root,key_wd_file)
+        file_obj = open(file_path,'rb')
+        if 'qytang' in str(file_obj.read()):
+            print(file_path)
+        file_obj.close()

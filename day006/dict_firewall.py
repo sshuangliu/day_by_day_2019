@@ -55,3 +55,5 @@ port_list = ['eth 1/101/1/42', 'eth 1/101/1/26', 'eth 1/101/1/23', 'eth 1/101/1/
 
 new_port_list = sorted(port_list, key=lambda x: (int(re.findall(r'\d{1,3}',x)[0]),int(re.findall(r'\d{1,3}',x)[1]),int(re.findall(r'\d{1,3}',x)[2]),int(re.findall(r'\d{1,3}',x)[3])))
 print(new_port_list)
+
+
