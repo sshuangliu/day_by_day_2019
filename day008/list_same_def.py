@@ -19,7 +19,7 @@ def compare_same(list1, list2):
         else:
             print('%s  only in L1' % str(i))
     for m in list2:
-        if m in list1 and m in list2:
+        if operator.eq(i, m):
             pass
         else:
             print('%s  only in L2' % str(m))
