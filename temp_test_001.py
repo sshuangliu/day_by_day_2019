@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-#@Time  : 2019/10/26 22:07
-#@Author: max liu
-#@File  : temp_test_001.py
+# @Time  : 2019/10/26 22:07
+# @Author: max liu
+# @File  : temp_test_001.py
 
 # import re
 # import os
@@ -25,10 +25,16 @@
 # print(re.findall(r'/bbc/b', 'eeegfd bc dad'))
 
 
-#运行一个简单的HTTP服务器
-from http.server import HTTPServer, CGIHTTPRequestHandler
+# #运行一个简单的HTTP服务器
+# from http.server import HTTPServer, CGIHTTPRequestHandler
+#
+# port = 80
+# httpd = HTTPServer(('', port), CGIHTTPRequestHandler)
+# print('Starting simple httpd on port: ' + str(httpd.server_port))
+# httpd.serve_forever()
 
-port = 80
-httpd = HTTPServer(('', port), CGIHTTPRequestHandler)
-print('Starting simple httpd on port: ' + str(httpd.server_port))
-httpd.serve_forever()
+from kamene.all import *
+# from kamene.layers.inet import IP, ICMP
+
+ping_pkt = IP(dst='127.0.0.1') / ICMP(type=8, code=0)  # 制造一个Ping包
+ping_result = sr1(ping_pkt, timeout=2, verbose=False)  # Ping并且把返回结果复制给ping_result
