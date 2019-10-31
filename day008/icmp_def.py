@@ -10,7 +10,8 @@ from kamene.all import *
 logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
 
-# show_interfaces() 查看网卡list
+# show_interfaces() 查看网卡list for windows
+# get_if_list() 查看网卡list for Linux
 def ping_pro(ip):
     ping_pkt = IP(dst=ip) / ICMP(type=8, code=0)  # 制造一个Ping包
 

@@ -32,7 +32,7 @@
 # httpd = HTTPServer(('', port), CGIHTTPRequestHandler)
 # print('Starting simple httpd on port: ' + str(httpd.server_port))
 # httpd.serve_forever()
-import ifaddr as ifaddr
+# import ifaddr as ifaddr
 from kamene.all import *
 import logging
 
@@ -42,3 +42,7 @@ logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 ping_pkt = IP(dst='1.1.1.1') / ICMP(type=8, code=0)  # 制造一个Ping包
 ping_result = sr(ping_pkt, timeout=2, verbose=True)  # Ping并且把返回结果复制给ping_result
 print(ping_result)
+
+
+# show_interfaces()
+print(get_if_list())
