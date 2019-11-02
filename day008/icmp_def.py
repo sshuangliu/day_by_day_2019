@@ -18,11 +18,11 @@ def ping_pro(ip):
     # ping_result.show()  # 查看回显结果
     # print(ping_result[ICMP].show())
 
-    if ping_result:         # ping_result[ICMP].type == ping_result[ICMP].code == 0:
-        print('%s 通！'%ping_result[IP].src)
+    if ping_result:  # ping_result[ICMP].type == ping_result[ICMP].code == 0:
+        print('%s 通！' % ping_result[IP].src)
     else:
         print('%s 不通！' % ip)
 
+
 if __name__ == '__main__':
     ping_pro('www.baidu.com')
-
