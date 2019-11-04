@@ -25,4 +25,4 @@ def ping_pro(ip):
 
 
 if __name__ == '__main__':
-    ping_pro('www.baidu.com')
+    ping_pro('114.114.114.114')
