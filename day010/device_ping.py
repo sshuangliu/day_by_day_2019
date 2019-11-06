@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# @Time  : 2019/10/31 14:02
-# @Author: max liu
-# @File  : icmp_def.py
+#@Time  : 2019/11/6 18:29
+#@Author: max liu
+#@File  : device_ping.py
 
 import logging
 from kamene.all import *
@@ -19,10 +19,12 @@ def ping_pro(ip):
     # print(ping_result[ICMP].show())
 
     if ping_result:  # ping_result[ICMP].type == ping_result[ICMP].code == 0:
-        print('%s 通！' % ping_result[IP].src)
+        return True
+        # print('%s 通！' % ping_result[IP].src)
     else:
-        print('%s 不通！' % ip)
+        return False
+        # print('%s 不通！' % ip)
 
 
 if __name__ == '__main__':
-    ping_pro('192.168.59.130')
+    print(ping_pro('192.168.59.130'))
