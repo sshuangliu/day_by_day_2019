@@ -27,4 +27,4 @@ def ping_pro(ip):
 
 
 if __name__ == '__main__':
-    print(ping_pro('192.168.59.130'))
+    print(ping_pro('61.51.111.34'))
