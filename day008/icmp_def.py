@@ -6,6 +6,7 @@
 
 import logging
 from kamene.all import *
+from kamene.layers.inet import ICMP, IP
 
 logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
@@ -15,6 +16,7 @@ logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 def ping_pro(ip):
     ping_pkt = IP(dst=ip) / ICMP(type=8, code=0)  # 制造一个Ping包
     ping_result = sr1(ping_pkt, timeout=2, verbose=False)  # Ping并且把返回结果复制给ping_result
+    ping_pkt.show()
     # ping_result.show()  # 查看回显结果
     # print(ping_result[ICMP].show())
 
@@ -25,4 +27,4 @@ def ping_pro(ip):
 
 
 if __name__ == '__main__':
-    ping_pro('192.168.59.130')
+    ping_pro('baidu.com')
