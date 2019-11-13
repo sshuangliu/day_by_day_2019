@@ -26,7 +26,7 @@ class Shuang_ping:
         ping_pkt = IP(dst=self.dstip, src=self.srcip) / ICMP(type=8, code=0) / (b'P' * self.length)  # 制造一个Ping包
         return ping_pkt
 
-    def one(self): #### 为啥结果 多余返回了一个None，排查了半天没看出来，教主帮忙看看？
+    def one(self): ####
         # self.__pkt_for_icmp().show()
         ping_result = sr1(self.__pkt_for_icmp(), timeout=2, verbose=False)  # Ping并且把返回结果复制给ping_result
         # ping_result.show()  # 查看回显结果

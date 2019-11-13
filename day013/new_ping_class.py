@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(ping)
 
     print_new('ping one for sure reachable')
-    print(ping.one())
+    ping.one()
 
     print_new('ping five')
     ping.ping()
