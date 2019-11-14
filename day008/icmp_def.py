@@ -27,4 +27,4 @@ def ping_pro(ip):
 
 
 if __name__ == '__main__':
-    ping_pro('baidu.com')
+    ping_pro('8.8.8.8')

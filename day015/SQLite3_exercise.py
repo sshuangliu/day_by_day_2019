@@ -25,14 +25,14 @@ c = conn.cursor()
 #  创建表
 c.execute(
     '''CREATE TABLE Student_homework_info
-    (ID INT PRIMARY KEY     NOT NULL,
+    (ID INTEGER PRIMARY KEY     AUTOINCREMENT,
     '姓名' varchar(40)        NOT NULL,
     age    int,
     '作业数' int);
     ''')
 
 #  插入表
-id = 1
+
 
 for v in Sql_dict:
     name = v.get('姓名')
@@ -40,10 +40,9 @@ for v in Sql_dict:
     homework_commits = v.get('作业数')
     # insert 的内容 字符串 需要'',数字不需要
     c.execute(
-        f'''INSERT INTO Student_homework_info (ID,姓名,age,作业数)
-      VALUES ({id},'{name}',{age},{homework_commits})
+        f'''INSERT INTO Student_homework_info (姓名,age,作业数)
+      VALUES ('{name}',{age},{homework_commits})
     ''')
-    id += 1
 conn.commit()
 
 #  查询表
@@ -62,35 +61,36 @@ while True:
     if option == 0:
         break
     elif option == 1:
-        c.execute('''SELECT * FROM Student_homework_info''')
-        for i in c.fetchall():
+        results = c.execute('''SELECT * FROM Student_homework_info''')
+        results_all = results.fetchall()
+        for i in results_all:
             print(i)
 
     elif option == 2:
         name = input('请输入学员姓名：')
-        c.execute(f'''SELECT * FROM Student_homework_info where 姓名 = \'{name}\'''')  # 字符串输入‘’ ？？？？？
-        result = c.fetchall()  # c.fetchall() 结果被处理一次就为空，需要保存到中间变量，以便二次操作
-        if result:
-            for i in result:
+        results = c.execute(f'''SELECT * FROM Student_homework_info where 姓名 = \'{name}\'''')  # 字符串输入‘’ ？？？？？
+        results_all = results.fetchall()  # c.fetchall() 结果被处理一次就为空，需要保存到中间变量，以便二次操作
+        if results_all:
+            for i in results_all:
                 print(i)
         else:
             print('学员不存在')
 
     elif option == 3:
         age = input('搜索大于输入年龄的学员,请输入学员年龄：')
-        c.execute(f'''SELECT * FROM Student_homework_info where age > {age}''')
-        result = c.fetchall()
-        if result:
-            for i in result:
+        results = c.execute(f'''SELECT * FROM Student_homework_info where age > {age}''')
+        results_all = results.fetchall()
+        if results_all:
+            for i in results_all:
                 print(i)
         else:
             print('不存在')
     elif option == 4:
         homework_commits = int(input('搜索大于输入作业数的学员,请输入作业数量：'))
-        c.execute(f'''SELECT * FROM Student_homework_info where 作业数 > {homework_commits}''')
-        result = c.fetchall()
-        if result:
-            for i in result:
+        results = c.execute(f'''SELECT * FROM Student_homework_info where 作业数 > {homework_commits}''')
+        results_all = results.fetchall()
+        if results_all:
+            for i in results_all:
                 print(i)
         else:
             print('不存在')
