@@ -92,7 +92,7 @@ class Config_comparison_and_to_db(Device_ssh_001):
                     else:
                         print('无需更新，DB当前md5_value为：', self.select_tab('MD5_Value')[0][0])
                 time.sleep(5)
-        except KeyboardInterrupt: #
+        except KeyboardInterrupt:  #
             sys.exit()
 
 
