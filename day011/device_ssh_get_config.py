@@ -8,7 +8,6 @@
 import paramiko
 
 
-
 class Device_ssh_001(object):
 
     def __init__(self, ip, username, password, port=22):
@@ -26,5 +25,5 @@ class Device_ssh_001(object):
 
 
 if __name__ == '__main__':
-    shuang_ssh = Device_ssh_001(ip='192.168.59.132', username='cisco', password='Cisc0123')
+    shuang_ssh = Device_ssh_001(ip='192.168.59.136', username='cisco', password='Cisc0123')
     print(shuang_ssh.ssh_get_config())
