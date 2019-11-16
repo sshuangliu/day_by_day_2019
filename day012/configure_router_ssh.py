@@ -34,4 +34,4 @@ def configure_router(hostname=None, username=None, password=None, enable='', wai
 
 if __name__ == '__main__':
     cmd_list_001 = ['terminal length 0', 'show version', 'config t', 'router ospf 1', 'network 1.1.1.1 0.0.0.0 area 0']
-    configure_router(hostname='192.168.59.132', username='cisco1', password='cisco1', cmd_list=cmd_list_001)
+    configure_router(hostname='192.168.59.133', username='cisco', password='Cisc0123', cmd_list=cmd_list_001)

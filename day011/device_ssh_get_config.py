@@ -21,9 +21,9 @@ class Device_ssh_001(object):
         ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh_client.connect(hostname=self.ip, username=self.username, password=self.password, port=self.port)
         stdin, stdout, stderr = ssh_client.exec_command(cmd)
-        return stdout.read().decode()
-
+        results = stdout.read().decode()
+        return results
 
 if __name__ == '__main__':
-    shuang_ssh = Device_ssh_001(ip='192.168.59.136', username='cisco', password='Cisc0123')
+    shuang_ssh = Device_ssh_001(ip='192.168.59.137', username='cisco', password='Cisc0123')
     print(shuang_ssh.ssh_get_config())
