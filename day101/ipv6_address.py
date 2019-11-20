@@ -8,6 +8,7 @@
 # https://www.runoob.com/python3/python3-basic-operators.html 运算符
 
 
+
 # a = 0011 1100
 #
 # b = 0000 1101
@@ -102,6 +103,7 @@ def mac2eui64(mac, prefix=None):
             return str(net[euil])  # EUI64位主机位，直接从网络主机列表属性提取
         except  Exception:  # pylint: disable=bare-except
             return
+
 
 print(mac2eui64(mac='06:b2:4a:00:00:9f'))
 print(mac2eui64(mac='06:b2:4a:00:00:9f', prefix='2001:db8:100::/64'))

@@ -46,5 +46,4 @@ def sort_ip(ips):
 if __name__ == "__main__":
     print(sort_ip(IP_LIST))
 
-if __name__ == '__main__':
-    pass
+
