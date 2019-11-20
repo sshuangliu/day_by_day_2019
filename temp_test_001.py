@@ -38,7 +38,6 @@
 from kamene.all import *
 import logging
 
-
 #
 # logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 # # from kamene.layers.inet import IP, ICMP
@@ -51,16 +50,20 @@ import logging
 # # show_interfaces()
 # print(get_if_list())
 #
-class Networkerror(Exception):
-    def __init__(self, arg):
-        self.arg = arg
+# class Networkerror(Exception):
+#     def __init__(self, arg):
+#         self.arg = arg
+#
+#     def __str__(self):
+#         return repr(self.arg)
+#
+#
+# try:
+#     raise Networkerror("Bad hostname")
+# except Networkerror as e:
+#     print(type(e))
+#     print(e)
 
-    def __str__(self):
-        return repr(self.arg)
 
-
-try:
-    raise Networkerror("Bad hostname")
-except Networkerror as e:
-    print(type(e))
-    print(e)
+import matplotlib
+print(matplotlib.matplotlib_fname())
