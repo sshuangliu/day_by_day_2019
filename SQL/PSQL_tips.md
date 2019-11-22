@@ -1,5 +1,8 @@
 # Lesson01 什么是PostgreSql？
 
+小马视频:http://komavideo.com/
+
+gitee:https://gitee.com/komavideo/LearnPostgreSql
 ## 知识点
 
 * 面向关系的数据库
