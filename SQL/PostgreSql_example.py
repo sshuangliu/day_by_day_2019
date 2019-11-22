@@ -55,7 +55,7 @@ cursor = conn.cursor()
 # conn.commit()
 
 
-# 执行创建表的任务
+# 执行创建表的任务  表字段约束条件
 cursor.execute("create table config_info(id SERIAL PRIMARY KEY, config varchar(9999) not null, md5 varchar(200) unique, record_time timestamp default current_timestamp)")
 
 
