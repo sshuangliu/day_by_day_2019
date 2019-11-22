@@ -1,4 +1,4 @@
-[https://segmentfault.com/a/1190000018812714#articleHeader0]()
+[CentOS 7 安装 PostgreSQL 11](https://segmentfault.com/a/1190000018812714)
 
 ##### 环境
 psql (PostgreSQL) 11.6  
