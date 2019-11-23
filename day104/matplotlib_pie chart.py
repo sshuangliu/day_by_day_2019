@@ -52,6 +52,7 @@ def pie_chart(size_list,name_list):
     # plt.axis([-1, 10, 0, 6]) 横轴-1 10.纵轴0 6
     plt.axis('equal')
     plt.legend()
+    plt.savefig('pie_chat.png', dpi=600)
     plt.show()
 
 if __name__ == '__main__':
