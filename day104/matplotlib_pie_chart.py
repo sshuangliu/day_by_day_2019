@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # @Time  : 2019/11/20 22:24
 # @Author: max liu
-# @File  : matplotlib_pie chart.py
+# @File  : matplotlib_pie_chart.py
 
 
 from matplotlib import pyplot as plt

@@ -12,7 +12,7 @@ logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
 class New_ping(Shuang_ping):
 
-    def __pkt_for_icmp(self):  # 私有方法,仅仅在内部调用 模块导入也到其他也无法使用
+    def __pkt_for_icmp(self):  # single_leading_underscore 私有方法,仅仅在内部调用 模块导入也到其他也无法使用
         ping_pkt = IP(dst=self.dstip, src=self.srcip) / ICMP(type=8, code=0) / (b'P' * self.length)  # 制造一个Ping包
         return ping_pkt
 

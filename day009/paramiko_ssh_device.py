@@ -14,8 +14,8 @@ def shuang_ssh(ip, username, password, port=22, cmd='ls'):
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh_client.connect(hostname=ip, username=username, password=password)
     stdin, stdout, stderr = ssh_client.exec_command(cmd)
-    print(stdout.read().decode())
-
+    # print(stdout.read().decode())
+    return stdout.read().decode()
 
 if __name__ == '__main__':
-    shuang_ssh(ip='192.168.157.141', username='root', password='root123', cmd='cat /etc/redhat-release')
+    print(shuang_ssh(ip='192.168.157.37', username='root', password='root123', cmd='cat /etc/redhat-release'))
