@@ -228,3 +228,117 @@ from datetime import datetime
 # print(y1)
 # print(y2)
 
+
+import time
+
+# print ("time.time(): %f " %  time.time())
+# print(type(time.time()))
+# print (time.localtime( time.time() ))
+# print(type(time.localtime(time.time())))
+# print (time.asctime( time.localtime(time.time()) ))
+# print(type(time.asctime( time.localtime(time.time()))))
+#
+# from datetime import datetime
+# import os
+# from apscheduler.schedulers.blocking import BlockingScheduler
+#
+#
+# def tick():
+#     print('Tick! The time is: %s' % datetime.now())
+#
+#
+# if __name__ == '__main__':
+#     scheduler = BlockingScheduler()
+#     scheduler.add_job(tick, 'interval', seconds=3)
+#     print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C    '))
+#
+#     try:
+#         scheduler.start()
+#     except (KeyboardInterrupt, SystemExit):
+#         pass
+#
+#
+# from apscheduler.schedulers.blocking import BlockingScheduler
+# from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
+# import datetime
+# import logging
+#
+# #  2019-11-28 15:44:11 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+# logging.basicConfig(level=logging.INFO,
+#                       format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+#                       datefmt='%Y-%m-%d %H:%M:%S',
+#                       filename='apscheduler_log1.txt',
+#                       filemode='a')
+#
+#
+# def aps_test(x):
+#       print (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), x)
+#
+#
+# def date_test(x):
+#       print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), x)
+#       print (1/0)
+#
+#
+# def my_listener(event):
+#       if event.exception:
+#           print ('任务出错了！！！！！！')
+#       else:
+#           print ('任务照常运行...')
+#
+# scheduler = BlockingScheduler()
+# scheduler.add_job(func=date_test, args=('一次性任务,会出错',), next_run_time=datetime.datetime.now() + datetime.timedelta(seconds=15), id='date_task')
+# scheduler.add_job(func=aps_test, args=('循环任务',), trigger='interval', seconds=3, id='interval_task')
+# scheduler.add_listener(my_listener, EVENT_JOB_EXECUTED | EVENT_JOB_ERROR)
+# scheduler._logger = logging
+#
+# scheduler.start()
+
+from datetime import datetime
+# import os
+# from apscheduler.schedulers.blocking import BlockingScheduler
+#
+#
+# class test:
+#     def tick(self, a, b, c):
+#         # print('Tick! The time is: %s' % datetime.now())
+#         print(a)
+#         print(b)
+#         print(c)
+#
+#
+# if __name__ == '__main__':
+#     t = test()
+#     scheduler = BlockingScheduler()
+#     scheduler.add_job(t.tick, trigger='interval', args=('ha', 'haha', 'hahaha'), seconds=3)
+#     print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C    '))
+#
+#     try:
+#         scheduler.start()
+#     except (KeyboardInterrupt, SystemExit):
+#         pass
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
+plt.rcParams['font.family'] = 'sans-serif'
+
+x = np.linspace(-10, 10)
+y = np.sin(x)
+
+# 211表示，要绘制的图是2行1列，最后一个1，表示的是子图中的第一个图
+plt.subplot(211)
+plt.plot(x, y, color='r')
+plt.title('路由器CPU利用率')
+plt.xlabel('采集时间')
+plt.ylabel('设备CPU\Memory利用率')
+
+plt.subplot(212)
+plt.plot(x, y, color='b')
+
+# 添加主题和注释
+plt.title('路由器CPU利用率')
+plt.xlabel('采集时间')
+plt.ylabel('设备CPU\Memory利用率')
+plt.show()

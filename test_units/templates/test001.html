@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Please input page number</title>
+</head>
+<body>
+{% if page_num %}
+  {% if page_num | int <=0 %}
+  <p style="color:red">{{ message }}</p>
+  {% else %}
+    {% for i in range(page_num|int)  %}
+    <a href="/page/{{ i }}">{{ i }}</a>
+  {% endfor %}
+  {% endif %}
+{% endif %}
+  <form action="/test01" method="post">
+    <legend>Please input page number:</legend>
+    <p><input name="page_num" placeholder=0 ></p>
+    <p><button type="submit">Sign In</button></p>
+  </form>
+</body>
+</html>

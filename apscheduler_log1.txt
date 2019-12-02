@@ -1,0 +1,28 @@
+2019-11-28 15:44:11 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-11-28 15:44:11 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-11-28 15:44:11 base.py[line:881] INFO Added job "date_test" to job store "default"
+2019-11-28 15:44:11 base.py[line:881] INFO Added job "aps_test" to job store "default"
+2019-11-28 15:44:11 base.py[line:166] INFO Scheduler started
+2019-11-28 15:44:14 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:14 CST)" (scheduled at 2019-11-28 15:44:14.531781+08:00)
+2019-11-28 15:44:14 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:17 CST)" executed successfully
+2019-11-28 15:44:17 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:17 CST)" (scheduled at 2019-11-28 15:44:17.531781+08:00)
+2019-11-28 15:44:17 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:17 CST)" executed successfully
+2019-11-28 15:44:20 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:20 CST)" (scheduled at 2019-11-28 15:44:20.531781+08:00)
+2019-11-28 15:44:20 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:23 CST)" executed successfully
+2019-11-28 15:44:23 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:23 CST)" (scheduled at 2019-11-28 15:44:23.531781+08:00)
+2019-11-28 15:44:23 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:23 CST)" executed successfully
+2019-11-28 15:44:26 base.py[line:123] INFO Running job "date_test (trigger: date[2019-11-28 15:44:11 CST], next run at: 2019-11-28 15:44:26 CST)" (scheduled at 2019-11-28 15:44:26.493757+08:00)
+2019-11-28 15:44:26 base.py[line:627] INFO Removed job date_task
+2019-11-28 15:44:26 base.py[line:131] ERROR Job "date_test (trigger: date[2019-11-28 15:44:11 CST], next run at: 2019-11-28 15:44:26 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/test_unit_001.py", line 279, in date_test
+    print (1/0)
+ZeroDivisionError: division by zero
+2019-11-28 15:44:26 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:26 CST)" (scheduled at 2019-11-28 15:44:26.531781+08:00)
+2019-11-28 15:44:26 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:26 CST)" executed successfully
+2019-11-28 15:44:29 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:29 CST)" (scheduled at 2019-11-28 15:44:29.531781+08:00)
+2019-11-28 15:44:29 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:29 CST)" executed successfully
+2019-11-28 15:44:32 base.py[line:123] INFO Running job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:32 CST)" (scheduled at 2019-11-28 15:44:32.531781+08:00)
+2019-11-28 15:44:32 base.py[line:144] INFO Job "aps_test (trigger: interval[0:00:03], next run at: 2019-11-28 15:44:35 CST)" executed successfully

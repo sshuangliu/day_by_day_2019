@@ -13,7 +13,7 @@ teachers_dict = [{'姓名': '秦柯', '年龄': 37, '部门': '安全', '职位'
                  {'姓名': '周亚军', '年龄': 31, '部门': '路由交换', '职位': '讲师'}]
 
 # 连接外部PSQL数据库
-conn = pg8000.connect(host='10.1.1.60', user='qytangdbuser', password='Cisc0123', database='qytangdb')
+conn = pg8000.connect(host='192.168.59.100', user='shuangliu007', password='shuangliu001', database='shuangdb_001')
 cursor = conn.cursor()
 
 # # 执行创建表的任务

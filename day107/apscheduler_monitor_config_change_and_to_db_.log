@@ -1,0 +1,108 @@
+2019-12-01 12:31:26 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 12:31:26 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 12:31:26 base.py[line:881] INFO Added job "Config_comparison_and_to_db.create_tab" to job store "default"
+2019-12-01 12:31:26 base.py[line:881] INFO Added job "Config_comparison_and_to_db.monitor_config_change_and_to_db" to job store "default"
+2019-12-01 12:31:26 base.py[line:166] INFO Scheduler started
+2019-12-01 12:32:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 12:32:00 CST], next run at: 2019-12-01 12:32:00 CST)" (scheduled at 2019-12-01 12:32:00+08:00)
+2019-12-01 12:32:00 base.py[line:627] INFO Removed job once_task
+2019-12-01 12:32:00 base.py[line:144] INFO Job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 12:32:00 CST], next run at: 2019-12-01 12:32:00 CST)" executed successfully
+2019-12-01 12:32:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:30 CST)" (scheduled at 2019-12-01 12:32:30+08:00)
+2019-12-01 12:32:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 12:32:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 12:32:31 base.py[line:131] ERROR Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:33 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ('INSERT INTO running_configure_Backup(tdate,MD5_Value,RUN_CONFIG) VALUES (?,?,?)', ((705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a77d6840>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a77d6840>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a77d6840>)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 98, in monitor_config_change_and_to_db
+    self.insert_tab(time.strftime('%Y-%m-%d %H:%M:%S'), cisco_md5_values, cisco_return_values)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 58, in insert_tab
+    c.execute(sql, (date, md5_value, run_config))
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '75', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-01 12:32:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:33 CST)" (scheduled at 2019-12-01 12:32:33+08:00)
+2019-12-01 12:32:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 12:32:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 12:32:34 base.py[line:131] ERROR Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:36 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ('INSERT INTO running_configure_Backup(tdate,MD5_Value,RUN_CONFIG) VALUES (?,?,?)', ((705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a6d6d268>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a6d6d268>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a6d6d268>)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 98, in monitor_config_change_and_to_db
+    self.insert_tab(time.strftime('%Y-%m-%d %H:%M:%S'), cisco_md5_values, cisco_return_values)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 58, in insert_tab
+    c.execute(sql, (date, md5_value, run_config))
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '75', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-01 12:32:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:36 CST)" (scheduled at 2019-12-01 12:32:36+08:00)
+2019-12-01 12:32:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 12:32:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 12:32:37 base.py[line:131] ERROR Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:39 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ('INSERT INTO running_configure_Backup(tdate,MD5_Value,RUN_CONFIG) VALUES (?,?,?)', ((705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d350d0>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d350d0>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d350d0>)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 98, in monitor_config_change_and_to_db
+    self.insert_tab(time.strftime('%Y-%m-%d %H:%M:%S'), cisco_md5_values, cisco_return_values)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 58, in insert_tab
+    c.execute(sql, (date, md5_value, run_config))
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '75', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-01 12:32:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:39 CST)" (scheduled at 2019-12-01 12:32:39+08:00)
+2019-12-01 12:32:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 12:32:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 12:32:40 base.py[line:131] ERROR Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:32:42 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ('INSERT INTO running_configure_Backup(tdate,MD5_Value,RUN_CONFIG) VALUES (?,?,?)', ((705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d20c80>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d20c80>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7fe7a5d20c80>)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 98, in monitor_config_change_and_to_db
+    self.insert_tab(time.strftime('%Y-%m-%d %H:%M:%S'), cisco_md5_values, cisco_return_values)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 58, in insert_tab
+    c.execute(sql, (date, md5_value, run_config))
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '75', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}

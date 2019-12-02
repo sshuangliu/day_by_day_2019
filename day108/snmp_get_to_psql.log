@@ -1,0 +1,123 @@
+2019-12-02 16:37:30 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:37:30 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:37:30 base.py[line:881] INFO Added job "create_tab_for_snmp" to job store "default"
+2019-12-02 16:37:30 base.py[line:881] INFO Added job "to_psql" to job store "default"
+2019-12-02 16:37:30 base.py[line:166] INFO Scheduler started
+2019-12-02 16:38:00 base.py[line:123] INFO Running job "create_tab_for_snmp (trigger: date[2019-12-02 16:38:00 CST], next run at: 2019-12-02 16:38:00 CST)" (scheduled at 2019-12-02 16:38:00+08:00)
+2019-12-02 16:38:00 base.py[line:627] INFO Removed job once_task
+2019-12-02 16:38:00 base.py[line:144] INFO Job "create_tab_for_snmp (trigger: date[2019-12-02 16:38:00 CST], next run at: 2019-12-02 16:38:00 CST)" executed successfully
+2019-12-02 16:38:30 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:38:30 CST)" (scheduled at 2019-12-02 16:38:30+08:00)
+2019-12-02 16:38:30 base.py[line:131] ERROR Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:38:36 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ("INSERT INTO device_cpu_memory_utilization(device_name,device_ipadd,cpu_utilization,memory_utilization) VALUES ('('SNMPv2-SMI::enterprises.9.2.1.3.0', 'CSR1000V-001')','192.168.59.140/24', '1', '81')", ())
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day108/snmp_get_to_psql.py", line 63, in to_psql
+    c.execute(sql)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near "SNMPv2"', 'P': '115', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-02 16:42:44 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:42:44 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:42:44 base.py[line:881] INFO Added job "create_tab_for_snmp" to job store "default"
+2019-12-02 16:42:44 base.py[line:881] INFO Added job "to_psql" to job store "default"
+2019-12-02 16:42:44 base.py[line:166] INFO Scheduler started
+2019-12-02 16:42:44 base.py[line:120] WARNING Run time of job "create_tab_for_snmp (trigger: date[2019-12-02 16:38:00 CST], next run at: 2019-12-02 16:38:00 CST)" was missed by 0:04:44.406065
+2019-12-02 16:42:44 base.py[line:627] INFO Removed job once_task
+2019-12-02 16:43:10 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:10 CST)" (scheduled at 2019-12-02 16:43:10+08:00)
+2019-12-02 16:43:10 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:16 CST)" executed successfully
+2019-12-02 16:43:16 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:16 CST)" (scheduled at 2019-12-02 16:43:16+08:00)
+2019-12-02 16:43:16 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:22 CST)" executed successfully
+2019-12-02 16:43:22 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:22 CST)" (scheduled at 2019-12-02 16:43:22+08:00)
+2019-12-02 16:43:22 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:28 CST)" executed successfully
+2019-12-02 16:43:28 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:28 CST)" (scheduled at 2019-12-02 16:43:28+08:00)
+2019-12-02 16:43:28 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:34 CST)" executed successfully
+2019-12-02 16:43:34 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:34 CST)" (scheduled at 2019-12-02 16:43:34+08:00)
+2019-12-02 16:43:34 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:40 CST)" executed successfully
+2019-12-02 16:43:40 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:40 CST)" (scheduled at 2019-12-02 16:43:40+08:00)
+2019-12-02 16:43:40 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:46 CST)" executed successfully
+2019-12-02 16:43:46 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:46 CST)" (scheduled at 2019-12-02 16:43:46+08:00)
+2019-12-02 16:43:46 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:52 CST)" executed successfully
+2019-12-02 16:43:52 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:52 CST)" (scheduled at 2019-12-02 16:43:52+08:00)
+2019-12-02 16:43:52 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:58 CST)" executed successfully
+2019-12-02 16:43:58 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:43:58 CST)" (scheduled at 2019-12-02 16:43:58+08:00)
+2019-12-02 16:43:58 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:04 CST)" executed successfully
+2019-12-02 16:44:04 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:10 CST)" (scheduled at 2019-12-02 16:44:04+08:00)
+2019-12-02 16:44:04 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:10 CST)" executed successfully
+2019-12-02 16:44:10 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:16 CST)" (scheduled at 2019-12-02 16:44:10+08:00)
+2019-12-02 16:44:10 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:16 CST)" executed successfully
+2019-12-02 16:44:16 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:22 CST)" (scheduled at 2019-12-02 16:44:16+08:00)
+2019-12-02 16:44:16 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:22 CST)" executed successfully
+2019-12-02 16:44:22 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:28 CST)" (scheduled at 2019-12-02 16:44:22+08:00)
+2019-12-02 16:44:22 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:28 CST)" executed successfully
+2019-12-02 16:44:28 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:34 CST)" (scheduled at 2019-12-02 16:44:28+08:00)
+2019-12-02 16:44:28 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:34 CST)" executed successfully
+2019-12-02 16:44:34 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:40 CST)" (scheduled at 2019-12-02 16:44:34+08:00)
+2019-12-02 16:44:34 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:40 CST)" executed successfully
+2019-12-02 16:44:40 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:46 CST)" (scheduled at 2019-12-02 16:44:40+08:00)
+2019-12-02 16:44:40 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:46 CST)" executed successfully
+2019-12-02 16:44:46 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:52 CST)" (scheduled at 2019-12-02 16:44:46+08:00)
+2019-12-02 16:44:52 base.py[line:978] WARNING Execution of job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:52 CST)" skipped: maximum number of running instances reached (1)
+2019-12-02 16:44:54 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:44:58 CST)" executed successfully
+2019-12-02 16:44:58 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:04 CST)" (scheduled at 2019-12-02 16:44:58+08:00)
+2019-12-02 16:45:02 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:04 CST)" executed successfully
+2019-12-02 16:45:04 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:10 CST)" (scheduled at 2019-12-02 16:45:04+08:00)
+2019-12-02 16:45:04 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:10 CST)" executed successfully
+2019-12-02 16:45:10 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:16 CST)" (scheduled at 2019-12-02 16:45:10+08:00)
+2019-12-02 16:45:10 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:16 CST)" executed successfully
+2019-12-02 16:45:16 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:22 CST)" (scheduled at 2019-12-02 16:45:16+08:00)
+2019-12-02 16:45:16 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:22 CST)" executed successfully
+2019-12-02 16:45:22 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:28 CST)" (scheduled at 2019-12-02 16:45:22+08:00)
+2019-12-02 16:45:22 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:28 CST)" executed successfully
+2019-12-02 16:45:28 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:34 CST)" (scheduled at 2019-12-02 16:45:28+08:00)
+2019-12-02 16:45:28 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:34 CST)" executed successfully
+2019-12-02 16:45:34 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:40 CST)" (scheduled at 2019-12-02 16:45:34+08:00)
+2019-12-02 16:45:34 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:40 CST)" executed successfully
+2019-12-02 16:45:40 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:46 CST)" (scheduled at 2019-12-02 16:45:40+08:00)
+2019-12-02 16:45:40 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:46 CST)" executed successfully
+2019-12-02 16:45:46 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:52 CST)" (scheduled at 2019-12-02 16:45:46+08:00)
+2019-12-02 16:45:46 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:52 CST)" executed successfully
+2019-12-02 16:45:52 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:58 CST)" (scheduled at 2019-12-02 16:45:52+08:00)
+2019-12-02 16:45:52 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:45:58 CST)" executed successfully
+2019-12-02 16:45:58 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:04 CST)" (scheduled at 2019-12-02 16:45:58+08:00)
+2019-12-02 16:45:58 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:04 CST)" executed successfully
+2019-12-02 16:46:04 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:10 CST)" (scheduled at 2019-12-02 16:46:04+08:00)
+2019-12-02 16:46:04 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:10 CST)" executed successfully
+2019-12-02 16:46:10 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:16 CST)" (scheduled at 2019-12-02 16:46:10+08:00)
+2019-12-02 16:46:10 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:16 CST)" executed successfully
+2019-12-02 16:46:16 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:22 CST)" (scheduled at 2019-12-02 16:46:16+08:00)
+2019-12-02 16:46:17 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:22 CST)" executed successfully
+2019-12-02 16:46:22 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:28 CST)" (scheduled at 2019-12-02 16:46:22+08:00)
+2019-12-02 16:46:23 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:28 CST)" executed successfully
+2019-12-02 16:46:28 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:34 CST)" (scheduled at 2019-12-02 16:46:28+08:00)
+2019-12-02 16:46:34 base.py[line:978] WARNING Execution of job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:34 CST)" skipped: maximum number of running instances reached (1)
+2019-12-02 16:46:36 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:40 CST)" executed successfully
+2019-12-02 16:46:40 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:46 CST)" (scheduled at 2019-12-02 16:46:40+08:00)
+2019-12-02 16:46:40 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:46 CST)" executed successfully
+2019-12-02 16:46:46 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:52 CST)" (scheduled at 2019-12-02 16:46:46+08:00)
+2019-12-02 16:46:46 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:52 CST)" executed successfully
+2019-12-02 16:46:52 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:58 CST)" (scheduled at 2019-12-02 16:46:52+08:00)
+2019-12-02 16:46:52 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:46:58 CST)" executed successfully
+2019-12-02 16:48:53 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:48:53 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-02 16:48:53 base.py[line:881] INFO Added job "create_tab_for_snmp" to job store "default"
+2019-12-02 16:48:53 base.py[line:881] INFO Added job "to_psql" to job store "default"
+2019-12-02 16:48:53 base.py[line:166] INFO Scheduler started
+2019-12-02 16:48:53 base.py[line:120] WARNING Run time of job "create_tab_for_snmp (trigger: date[2019-12-02 16:38:00 CST], next run at: 2019-12-02 16:38:00 CST)" was missed by 0:10:53.538094
+2019-12-02 16:48:53 base.py[line:627] INFO Removed job once_task
+2019-12-02 16:49:03 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:03 CST)" (scheduled at 2019-12-02 16:49:03.534647+08:00)
+2019-12-02 16:49:04 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:09 CST)" executed successfully
+2019-12-02 16:49:09 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:09 CST)" (scheduled at 2019-12-02 16:49:09.534647+08:00)
+2019-12-02 16:49:10 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:15 CST)" executed successfully
+2019-12-02 16:49:15 base.py[line:123] INFO Running job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:15 CST)" (scheduled at 2019-12-02 16:49:15.534647+08:00)
+2019-12-02 16:49:16 base.py[line:144] INFO Job "to_psql (trigger: interval[0:00:06], next run at: 2019-12-02 16:49:21 CST)" executed successfully
