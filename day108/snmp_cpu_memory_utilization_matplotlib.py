@@ -51,7 +51,7 @@ def snmp_matplotlib_line(stime):
 
     fig.autofmt_xdate()  # 当x轴太拥挤的时候可以让他自适应,斜着表示
     for time_, cpu_percent in zip(x_date, y1_cpu_utilization):
-        plt.text(time_, cpu_percent + 0.1, cpu_percent, verticalalignment="bottom", horizontalalignment="center")
+        plt.text(time_, cpu_percent + 1, cpu_percent, verticalalignment="bottom", horizontalalignment="center")
 
     ax2 = fig.add_subplot(212)
     # 添加主题和注释
@@ -62,7 +62,7 @@ def snmp_matplotlib_line(stime):
     fig.autofmt_xdate()  # 当x轴太拥挤的时候可以让他自适应,斜着表示
 
     for time_, memory_percent in zip(x_date, y2_memory_utilization):
-        plt.text(time_, memory_percent + 0.1, memory_percent, verticalalignment="top", horizontalalignment="center")
+        plt.text(time_, memory_percent + 0.3, memory_percent, verticalalignment="top", horizontalalignment="center")
 
     # 处理X轴时间格式
     import matplotlib.dates as mdate
