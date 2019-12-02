@@ -67,3 +67,32 @@ psql
 修改密码  
 alter user postgres password '密码'
 ~~~
+
+##### 创建新用户来访问PostgreSQL
+~~~
+* 1、如上所述，先切换到Linux用户postgres，并执行psql：
+$ su - postgres
+-bash-4.2$ psql
+postgres=#
+* 2、创建数据库新用户，如 dbuser：
+postgres=# CREATE USER dbuser WITH PASSWORD '*****';  
+--语句要以分号结尾。
+--密码要用单引号括起来。
+* 3、创建用户数据库，如exampledb：
+postgres=# CREATE DATABASE exampledb OWNER dbuser;
+* 4、将exampledb数据库的所有权限都赋予dbuser：
+postgres=# GRANT ALL ON DATABASE exampledb TO dbuser;
+* 5、使用命令 \q 退出psql：
+postgres=# \q
+* 6、创建Linux普通用户，与刚才新建的数据库用户同名，如 dbuser：
+$ sudo adduser dbuser
+
+$ sudo passwd dbuser
+* 7、以dbuser的身份连接数据库exampledb：
+$ su - dbuser
+
+Password: 
+Last login: Wed Mar 1 11:52:07 CST 2017 on pts/
+
+[dbuser@master ~]$ psql -d exampledb
+~~~
