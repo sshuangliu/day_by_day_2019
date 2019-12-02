@@ -90,7 +90,6 @@ def snmp_matplotlib_line(stime):
     # 绘制图形
     plt.show()
 
-
 if __name__ == '__main__':
     snmp_matplotlib_line(stime='2019-12-02 03:12:30')
     # print(select_tab(stime='2019-12-02 03:12:30'))
