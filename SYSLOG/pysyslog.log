@@ -1,0 +1,22 @@
+<189>96: *Dec  3 10:02:45.311: %SYS-5-CONFIG_I: Configured from console by console
+<189>97: *Dec  3 10:03:05.605: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>98: *Dec  3 10:03:06.606: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<189>99: *Dec  3 10:03:30.175: %SYS-5-CONFIG_I: Configured from console by console
+<189>104: *Dec  3 10:15:57.980: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>105: *Dec  3 10:15:58.981: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<189>106: *Dec  3 10:16:10.344: %SYS-5-CONFIG_I: Configured from console by console
+<187>107: *Dec  3 10:16:13.265: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>108: *Dec  3 10:16:14.265: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>109: *Dec  3 10:17:17.037: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>110: *Dec  3 10:17:33.134: %SYS-5-CONFIG_I: Configured from console by console
+<189>111: *Dec  3 10:36:42.109: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>112: *Dec  3 10:36:44.104: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>113: *Dec  3 10:36:45.106: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<189> syslog test
+<189>syslog test
+<189> syslog test
+<187>syslog test
+<189>70: *Dec  5 01:53:57.760: %SYS-5-CONFIG_I: Configured from console by console
+<187>74: *Dec  5 02:08:14.965: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>75: *Dec  5 02:08:15.966: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>76: *Dec  5 02:08:20.517: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done

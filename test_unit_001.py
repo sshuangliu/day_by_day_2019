@@ -318,27 +318,103 @@ from datetime import datetime
 #     except (KeyboardInterrupt, SystemExit):
 #         pass
 
-import numpy as np
-import matplotlib.pyplot as plt
+# import numpy as np
+# import matplotlib.pyplot as plt
+#
+# plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
+# plt.rcParams['font.family'] = 'sans-serif'
+#
+# x = np.linspace(-10, 10)
+# y = np.sin(x)
+#
+# # 211表示，要绘制的图是2行1列，最后一个1，表示的是子图中的第一个图
+# plt.subplot(211)
+# plt.plot(x, y, color='r')
+# plt.title('路由器CPU利用率')
+# plt.xlabel('采集时间')
+# plt.ylabel('设备CPU\Memory利用率')
+#
+# plt.subplot(212)
+# plt.plot(x, y, color='b')
+#
+# # 添加主题和注释
+# plt.title('路由器CPU利用率')
+# plt.xlabel('采集时间')
+# plt.ylabel('设备CPU\Memory利用率')
+# plt.show()
 
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
-plt.rcParams['font.family'] = 'sans-serif'
 
-x = np.linspace(-10, 10)
-y = np.sin(x)
+# # In Python 3.2+:
+#
+# >>> bin(int.from_bytes('hello'.encode(), 'big'))
+# '0b110100001100101011011000110110001101111'
+# # In reverse:
+#
+# >>> n = int('0b110100001100101011011000110110001101111', 2)
+# >>> n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
+# # 'hello
+#
+# import tkinter
+# import tkinter.messagebox
+#
+#
+# def main():
+#     flag = True
+#
+#     # 修改标签上的文字
+#     def change_label_text():
+#         nonlocal flag
+#         flag = not flag
+#         color, msg = ('red', 'Hello, world!')\
+#             if flag else ('blue', 'Goodbye, world!')
+#         label.config(text=msg, fg=color)
+#
+#     # 确认退出
+#     def confirm_to_quit():
+#         if tkinter.messagebox.askokcancel('温馨提示', '确定要退出吗?'):
+#             top.quit()
+#
+#     # 创建顶层窗口
+#     top = tkinter.Tk()
+#     # 设置窗口大小
+#     top.geometry('240x160')
+#     # 设置窗口标题
+#     top.title('小游戏')
+#     # 创建标签对象并添加到顶层窗口
+#     label = tkinter.Label(top, text='Hello, world!', font='Arial -32', fg='red')
+#     label.pack(expand=1)
+#     # 创建一个装按钮的容器
+#     panel = tkinter.Frame(top)
+#     # 创建按钮对象 指定添加到哪个容器中 通过command参数绑定事件回调函数
+#     button1 = tkinter.Button(panel, text='修改', command=change_label_text)
+#     button1.pack(side='left')
+#     button2 = tkinter.Button(panel, text='退出', command=confirm_to_quit)
+#     button2.pack(side='right')
+#     panel.pack(side='bottom')
+#     # 开启主事件循环
+#     tkinter.mainloop()
 
-# 211表示，要绘制的图是2行1列，最后一个1，表示的是子图中的第一个图
-plt.subplot(211)
-plt.plot(x, y, color='r')
-plt.title('路由器CPU利用率')
-plt.xlabel('采集时间')
-plt.ylabel('设备CPU\Memory利用率')
 
-plt.subplot(212)
-plt.plot(x, y, color='b')
+# 文件内容替换
+import os
+import re
 
-# 添加主题和注释
-plt.title('路由器CPU利用率')
-plt.xlabel('采集时间')
-plt.ylabel('设备CPU\Memory利用率')
-plt.show()
+# 遍历方式为以文件夹为主线遍历 root:当前遍历的文件夹绝对路径，dirs:当前遍历路径下文件夹的列表 files：当前遍历路径下文件的列表
+for root, dirs, files in os.walk("D:\T1", topdown=True):
+    for item in dirs:
+        for root1, dirs1, files1 in os.walk(os.path.join(root, item), topdown=True):
+            for i in files1:
+                if '.vmx' == os.path.splitext(i)[1]:
+                    with open(os.path.join(root1, i), 'r+') as f: # + 以seek（teel）位置逐行覆盖写; w/w+:先清空，慎用
+                        if re.findall(r'vmci0.present = "True"', f.read(10240)):
+                            f.seek(0)
+                            new_data = re.sub(r'vmci0.present = "True"', 'vmci0.present = "false"', f.read(10240),
+                                              count=1)
+                            f.seek(0)
+                            f.write(new_data)
+                            print('已修改:', os.path.join(root1, i))
+                        else:
+                            print('无需修改:', os.path.join(root1, i))
+                    break
+            break
+    break

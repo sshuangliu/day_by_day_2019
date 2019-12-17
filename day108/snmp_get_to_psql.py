@@ -55,6 +55,7 @@ def to_psql():
     memory_utilization = int((memory_used / (memory_free + memory_used)) * 100)
     device_name = snmpv2_get("192.168.59.140", "public", "1.3.6.1.4.1.9.2.1.3.0", port=161)[1]
     device_ipadd = '192.168.59.140/24'
+
     conn = pg8000.connect(host='192.168.59.100', user='shuangliu007', password='shuangliu001',
                           database='shuangdb_001')
     c = conn.cursor()
@@ -68,6 +69,23 @@ def to_psql():
 
 
 def create_tab_for_snmp():
+    """
+ https://www.postgresql.org/docs/9.6/functions-net.html
+ PSQL inet 网络数据类型，可以带上掩码信息，不写为/32掩码，后续可以根据网络属性过滤 过滤方法：
+ 1：过滤相同网络的主机
+ SELECT * FROM temp001 where network(ipadd) = network('2.2.2.2/24')
+ 2：过滤大于某个ip地址的主机
+ SELECT * FROM temp001 where ipadd > inet '2.2.2.3/24'
+ 3：过滤下一个ip地址的主机
+ SELECT * FROM temp001 where ipadd = inet '2.2.2.3/24' + 1
+ 4：过滤范围内的主机：
+ SELECT * FROM temp001 where ipadd > inet '2.2.2.2/24'  and ipadd < inet '2.2.2.5/24'
+ 5：插入网络类型的数据：
+ INSERT INTO temp001 (ipadd, name) VALUES ('22.2.2.200/24', '3')
+ 6：插入不符合网络数据类型会报错：
+ INSERT INTO temp001 (ipadd, name) VALUES ('22.2.2.256/24', '3')；
+
+    """
     conn = pg8000.connect(host='192.168.59.100', user='shuangliu007', password='shuangliu001',
                           database='shuangdb_001')
     c = conn.cursor()
@@ -110,16 +128,3 @@ if __name__ == "__main__":
         exit()
 
 
-# PSQL inet 网络数据类型，可以带上掩码信息，不写为/32掩码，后续可以根据网络属性过滤 过滤方法：
-# 过滤相同网络的主机
-# SELECT * FROM temp001 where network(ipadd) = network('2.2.2.2/24')
-# 过滤大于某个ip地址的主机
-# SELECT * FROM temp001 where ipadd > inet '2.2.2.3/24'
-# 过滤下一个ip地址的主机
-# SELECT * FROM temp001 where ipadd = inet '2.2.2.3/24' + 1
-# 过滤范围内的主机：
-# SELECT * FROM temp001 where ipadd > inet '2.2.2.2/24'  and ipadd < inet '2.2.2.5/24'
-# 插入网络类型的数据：
-# INSERT INTO temp001 (ipadd, name) VALUES ('22.2.2.200/24', '3')
-# 插入不符合网络数据类型会报错：
-# INSERT INTO temp001 (ipadd, name) VALUES ('22.2.2.256/24', '3')；

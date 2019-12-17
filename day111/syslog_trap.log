@@ -1,0 +1,35 @@
+<189>63: *Dec  5 01:35:08.801: %SYS-5-CONFIG_I: Configured from console by console
+<189>64: *Dec  5 01:39:45.812: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>65: *Dec  5 01:39:47.801: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>66: *Dec  5 01:39:48.808: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<187>67: *Dec  5 01:40:04.890: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>68: *Dec  5 01:40:05.891: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>69: *Dec  5 01:40:10.567: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>77: *Dec  5 03:44:30.730: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>78: *Dec  5 03:44:32.724: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>79: *Dec  5 03:44:33.726: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<187>80: *Dec  5 03:45:25.236: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>81: *Dec  5 03:45:26.237: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>82: *Dec  5 03:45:33.445: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>83: *Dec  5 03:47:46.171: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>84: *Dec  5 03:47:48.168: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>85: *Dec  5 03:47:49.167: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<187>86: *Dec  5 03:48:55.241: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>87: *Dec  5 03:48:56.242: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>88: *Dec  5 03:49:00.790: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>89: *Dec  5 04:11:58.314: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>90: *Dec  5 04:12:00.309: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>91: *Dec  5 04:12:01.311: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<187>92: *Dec  5 04:13:25.304: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>93: *Dec  5 04:13:26.305: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>94: *Dec  5 04:13:40.424: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>95: *Dec  5 04:14:22.124: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from FULL to DOWN, Neighbor Down: Interface down or detached
+<189>96: *Dec  5 04:14:24.121: %LINK-5-CHANGED: Interface GigabitEthernet6, changed state to administratively down
+<189>97: *Dec  5 04:14:25.122: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to down
+<189>98: *Dec  5 04:15:38.539: %SYS-5-CONFIG_I: Configured from console by console
+<187>99: *Dec  5 04:15:45.310: %LINK-3-UPDOWN: Interface GigabitEthernet6, changed state to up
+<189>100: *Dec  5 04:15:46.311: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>101: *Dec  5 04:15:51.076: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done
+<189>102: *Dec  5 04:16:27.756: %SYS-5-RELOAD: Reload requested by console. Reload Reason: Reload Command.
+<189>62: *Dec  5 04:19:18.083: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet6, changed state to up
+<189>63: *Dec  5 04:19:23.213: %OSPF-5-ADJCHG: Process 12, Nbr 2.2.2.2 on GigabitEthernet6 from LOADING to FULL, Loading Done

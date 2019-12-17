@@ -4,7 +4,7 @@
 </head>
 <body>
 {% if page_num %}
-  {% if page_num | int <=0 %}
+  {% if page_num|int <=0 %}
   <p style="color:red">{{ message }}</p>
   {% else %}
     {% for i in range(page_num|int)  %}

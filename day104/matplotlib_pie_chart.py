@@ -33,7 +33,7 @@ def pie_chart(size_list,name_list):
                                                  explode=explode,
                                                  labels=name_list,
                                                  labeldistance=1.1,
-                                                 autopct='%3.2f%%',
+                                                 autopct='%3.1f%%',
                                                  shadow=False,
                                                  startangle=90,
                                                  pctdistance=0.6

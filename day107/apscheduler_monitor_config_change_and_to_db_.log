@@ -106,3 +106,440 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
     raise self.error
 pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '75', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-01 12:53:41 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 12:53:41 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 12:53:41 base.py[line:881] INFO Added job "Config_comparison_and_to_db.create_tab" to job store "default"
+2019-12-01 12:53:41 base.py[line:881] INFO Added job "Config_comparison_and_to_db.monitor_config_change_and_to_db" to job store "default"
+2019-12-01 12:53:41 base.py[line:166] INFO Scheduler started
+2019-12-01 12:54:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 12:54:00 CST], next run at: 2019-12-01 12:54:00 CST)" (scheduled at 2019-12-01 12:54:00+08:00)
+2019-12-01 12:54:00 base.py[line:627] INFO Removed job once_task
+2019-12-01 12:54:00 base.py[line:144] INFO Job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 12:54:00 CST], next run at: 2019-12-01 12:54:00 CST)" executed successfully
+2019-12-01 12:54:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:54:30 CST)" (scheduled at 2019-12-01 12:54:30+08:00)
+2019-12-01 12:54:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 12:54:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 12:54:31 base.py[line:131] ERROR Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 12:54:33 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1778, in execute
+    ps = cache['ps'][key]
+KeyError: ('INSERT INTO running_configure_Backup(MD5_Value,RUN_CONFIG) VALUES (?,?)', ((705, 0, <function Connection.__init__.<locals>.text_out at 0x7f2831d20f28>), (705, 0, <function Connection.__init__.<locals>.text_out at 0x7f2831d20f28>)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 99, in monitor_config_change_and_to_db
+    self.insert_tab(cisco_md5_values, cisco_return_values)
+  File "/day_by_day_python_001/day107/config_running_psql_apscheduler.py", line 59, in insert_tab
+    c.execute(sql, (md5_value, run_config))
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 861, in execute
+    self._c.execute(self, operation, args)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1837, in execute
+    self.handle_messages(cursor)
+  File "/usr/local/lib/python3.7/site-packages/pg8000/core.py", line 1976, in handle_messages
+    raise self.error
+pg8000.core.ProgrammingError: {'S': 'ERROR', 'V': 'ERROR', 'C': '42601', 'M': 'syntax error at or near ","', 'P': '69', 'F': 'scan.l', 'L': '1134', 'R': 'scanner_yyerror'}
+2019-12-01 13:01:14 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:01:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:01:34 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:01:34 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:17:19 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:17:20 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:17:27 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:17:27 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:20:38 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:20:38 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:20:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:20:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:55:27 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 13:55:27 base.py[line:440] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2019-12-01 13:55:27 base.py[line:881] INFO Added job "Config_comparison_and_to_db.create_tab" to job store "default"
+2019-12-01 13:55:27 base.py[line:881] INFO Added job "Config_comparison_and_to_db.monitor_config_change_and_to_db" to job store "default"
+2019-12-01 13:55:27 base.py[line:166] INFO Scheduler started
+2019-12-01 13:56:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 13:56:00 CST], next run at: 2019-12-01 13:56:00 CST)" (scheduled at 2019-12-01 13:56:00+08:00)
+2019-12-01 13:56:00 base.py[line:627] INFO Removed job once_task
+2019-12-01 13:56:00 base.py[line:144] INFO Job "Config_comparison_and_to_db.create_tab (trigger: date[2019-12-01 13:56:00 CST], next run at: 2019-12-01 13:56:00 CST)" executed successfully
+2019-12-01 13:56:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:30 CST)" (scheduled at 2019-12-01 13:56:30+08:00)
+2019-12-01 13:56:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:31 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:33 CST)" executed successfully
+2019-12-01 13:56:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:33 CST)" (scheduled at 2019-12-01 13:56:33+08:00)
+2019-12-01 13:56:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:34 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:36 CST)" executed successfully
+2019-12-01 13:56:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:36 CST)" (scheduled at 2019-12-01 13:56:36+08:00)
+2019-12-01 13:56:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:37 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:39 CST)" executed successfully
+2019-12-01 13:56:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:39 CST)" (scheduled at 2019-12-01 13:56:39+08:00)
+2019-12-01 13:56:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:40 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:42 CST)" executed successfully
+2019-12-01 13:56:42 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:42 CST)" (scheduled at 2019-12-01 13:56:42+08:00)
+2019-12-01 13:56:42 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:42 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:43 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:45 CST)" executed successfully
+2019-12-01 13:56:45 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:45 CST)" (scheduled at 2019-12-01 13:56:45+08:00)
+2019-12-01 13:56:45 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:45 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:46 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:48 CST)" executed successfully
+2019-12-01 13:56:48 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:48 CST)" (scheduled at 2019-12-01 13:56:48+08:00)
+2019-12-01 13:56:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:49 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:51 CST)" executed successfully
+2019-12-01 13:56:51 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:51 CST)" (scheduled at 2019-12-01 13:56:51+08:00)
+2019-12-01 13:56:51 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:51 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:52 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:54 CST)" executed successfully
+2019-12-01 13:56:54 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:54 CST)" (scheduled at 2019-12-01 13:56:54+08:00)
+2019-12-01 13:56:54 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:54 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:55 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:56:57 CST)" executed successfully
+2019-12-01 13:56:57 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:00 CST)" (scheduled at 2019-12-01 13:56:57+08:00)
+2019-12-01 13:56:57 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:56:57 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:56:58 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:00 CST)" executed successfully
+2019-12-01 13:57:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:03 CST)" (scheduled at 2019-12-01 13:57:00+08:00)
+2019-12-01 13:57:00 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:00 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:01 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:03 CST)" executed successfully
+2019-12-01 13:57:03 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:06 CST)" (scheduled at 2019-12-01 13:57:03+08:00)
+2019-12-01 13:57:03 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:03 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:04 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:06 CST)" executed successfully
+2019-12-01 13:57:06 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:09 CST)" (scheduled at 2019-12-01 13:57:06+08:00)
+2019-12-01 13:57:06 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:06 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:07 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:09 CST)" executed successfully
+2019-12-01 13:57:09 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:12 CST)" (scheduled at 2019-12-01 13:57:09+08:00)
+2019-12-01 13:57:09 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:09 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:10 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:12 CST)" executed successfully
+2019-12-01 13:57:12 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:15 CST)" (scheduled at 2019-12-01 13:57:12+08:00)
+2019-12-01 13:57:12 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:12 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:13 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:15 CST)" executed successfully
+2019-12-01 13:57:15 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:18 CST)" (scheduled at 2019-12-01 13:57:15+08:00)
+2019-12-01 13:57:15 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:16 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:18 CST)" executed successfully
+2019-12-01 13:57:18 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:21 CST)" (scheduled at 2019-12-01 13:57:18+08:00)
+2019-12-01 13:57:18 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:18 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:19 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:21 CST)" executed successfully
+2019-12-01 13:57:21 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:24 CST)" (scheduled at 2019-12-01 13:57:21+08:00)
+2019-12-01 13:57:21 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:21 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:22 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:24 CST)" executed successfully
+2019-12-01 13:57:24 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:27 CST)" (scheduled at 2019-12-01 13:57:24+08:00)
+2019-12-01 13:57:24 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:24 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:25 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:27 CST)" executed successfully
+2019-12-01 13:57:27 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:30 CST)" (scheduled at 2019-12-01 13:57:27+08:00)
+2019-12-01 13:57:27 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:27 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:28 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:30 CST)" executed successfully
+2019-12-01 13:57:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:33 CST)" (scheduled at 2019-12-01 13:57:30+08:00)
+2019-12-01 13:57:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:31 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:33 CST)" executed successfully
+2019-12-01 13:57:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:36 CST)" (scheduled at 2019-12-01 13:57:33+08:00)
+2019-12-01 13:57:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:34 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:36 CST)" executed successfully
+2019-12-01 13:57:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:39 CST)" (scheduled at 2019-12-01 13:57:36+08:00)
+2019-12-01 13:57:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:37 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:39 CST)" executed successfully
+2019-12-01 13:57:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:42 CST)" (scheduled at 2019-12-01 13:57:39+08:00)
+2019-12-01 13:57:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:40 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:42 CST)" executed successfully
+2019-12-01 13:57:42 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:45 CST)" (scheduled at 2019-12-01 13:57:42+08:00)
+2019-12-01 13:57:42 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:42 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:43 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:45 CST)" executed successfully
+2019-12-01 13:57:45 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:48 CST)" (scheduled at 2019-12-01 13:57:45+08:00)
+2019-12-01 13:57:45 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:45 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:46 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:48 CST)" executed successfully
+2019-12-01 13:57:48 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:51 CST)" (scheduled at 2019-12-01 13:57:48+08:00)
+2019-12-01 13:57:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:49 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:51 CST)" executed successfully
+2019-12-01 13:57:51 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:54 CST)" (scheduled at 2019-12-01 13:57:51+08:00)
+2019-12-01 13:57:51 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:51 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:52 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:54 CST)" executed successfully
+2019-12-01 13:57:54 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:57 CST)" (scheduled at 2019-12-01 13:57:54+08:00)
+2019-12-01 13:57:54 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:54 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:55 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:57:57 CST)" executed successfully
+2019-12-01 13:57:57 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:00 CST)" (scheduled at 2019-12-01 13:57:57+08:00)
+2019-12-01 13:57:57 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:57:57 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:57:58 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:00 CST)" executed successfully
+2019-12-01 13:58:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:03 CST)" (scheduled at 2019-12-01 13:58:00+08:00)
+2019-12-01 13:58:00 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:00 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:01 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:03 CST)" executed successfully
+2019-12-01 13:58:03 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:06 CST)" (scheduled at 2019-12-01 13:58:03+08:00)
+2019-12-01 13:58:03 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:03 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:04 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:06 CST)" executed successfully
+2019-12-01 13:58:06 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:09 CST)" (scheduled at 2019-12-01 13:58:06+08:00)
+2019-12-01 13:58:06 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:06 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:07 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:09 CST)" executed successfully
+2019-12-01 13:58:09 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:12 CST)" (scheduled at 2019-12-01 13:58:09+08:00)
+2019-12-01 13:58:09 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:09 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:10 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:12 CST)" executed successfully
+2019-12-01 13:58:12 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:15 CST)" (scheduled at 2019-12-01 13:58:12+08:00)
+2019-12-01 13:58:12 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:12 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:13 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:15 CST)" executed successfully
+2019-12-01 13:58:15 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:18 CST)" (scheduled at 2019-12-01 13:58:15+08:00)
+2019-12-01 13:58:15 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:16 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:18 CST)" executed successfully
+2019-12-01 13:58:18 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:21 CST)" (scheduled at 2019-12-01 13:58:18+08:00)
+2019-12-01 13:58:18 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:18 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:19 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:21 CST)" executed successfully
+2019-12-01 13:58:21 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:24 CST)" (scheduled at 2019-12-01 13:58:21+08:00)
+2019-12-01 13:58:21 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:21 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:22 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:24 CST)" executed successfully
+2019-12-01 13:58:24 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:27 CST)" (scheduled at 2019-12-01 13:58:24+08:00)
+2019-12-01 13:58:24 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:24 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:25 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:27 CST)" executed successfully
+2019-12-01 13:58:27 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:30 CST)" (scheduled at 2019-12-01 13:58:27+08:00)
+2019-12-01 13:58:27 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:27 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:28 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:30 CST)" executed successfully
+2019-12-01 13:58:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:33 CST)" (scheduled at 2019-12-01 13:58:30+08:00)
+2019-12-01 13:58:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:31 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:33 CST)" executed successfully
+2019-12-01 13:58:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:36 CST)" (scheduled at 2019-12-01 13:58:33+08:00)
+2019-12-01 13:58:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:34 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:36 CST)" executed successfully
+2019-12-01 13:58:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:39 CST)" (scheduled at 2019-12-01 13:58:36+08:00)
+2019-12-01 13:58:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:37 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:39 CST)" executed successfully
+2019-12-01 13:58:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:42 CST)" (scheduled at 2019-12-01 13:58:39+08:00)
+2019-12-01 13:58:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:40 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:42 CST)" executed successfully
+2019-12-01 13:58:42 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:45 CST)" (scheduled at 2019-12-01 13:58:42+08:00)
+2019-12-01 13:58:42 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:42 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:43 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:45 CST)" executed successfully
+2019-12-01 13:58:45 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:48 CST)" (scheduled at 2019-12-01 13:58:45+08:00)
+2019-12-01 13:58:45 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:45 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:46 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:48 CST)" executed successfully
+2019-12-01 13:58:48 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:51 CST)" (scheduled at 2019-12-01 13:58:48+08:00)
+2019-12-01 13:58:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:49 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:51 CST)" executed successfully
+2019-12-01 13:58:51 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:54 CST)" (scheduled at 2019-12-01 13:58:51+08:00)
+2019-12-01 13:58:51 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:51 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:52 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:54 CST)" executed successfully
+2019-12-01 13:58:54 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:57 CST)" (scheduled at 2019-12-01 13:58:54+08:00)
+2019-12-01 13:58:54 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:54 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:55 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:58:57 CST)" executed successfully
+2019-12-01 13:58:57 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:00 CST)" (scheduled at 2019-12-01 13:58:57+08:00)
+2019-12-01 13:58:57 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:58:57 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:58:58 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:00 CST)" executed successfully
+2019-12-01 13:59:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:03 CST)" (scheduled at 2019-12-01 13:59:00+08:00)
+2019-12-01 13:59:00 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:00 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:01 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:03 CST)" executed successfully
+2019-12-01 13:59:03 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:06 CST)" (scheduled at 2019-12-01 13:59:03+08:00)
+2019-12-01 13:59:03 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:03 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:04 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:06 CST)" executed successfully
+2019-12-01 13:59:06 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:09 CST)" (scheduled at 2019-12-01 13:59:06+08:00)
+2019-12-01 13:59:06 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:06 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:07 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:09 CST)" executed successfully
+2019-12-01 13:59:09 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:12 CST)" (scheduled at 2019-12-01 13:59:09+08:00)
+2019-12-01 13:59:09 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:09 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:10 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:12 CST)" executed successfully
+2019-12-01 13:59:12 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:15 CST)" (scheduled at 2019-12-01 13:59:12+08:00)
+2019-12-01 13:59:12 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:12 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:13 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:15 CST)" executed successfully
+2019-12-01 13:59:15 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:18 CST)" (scheduled at 2019-12-01 13:59:15+08:00)
+2019-12-01 13:59:15 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:16 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:18 CST)" executed successfully
+2019-12-01 13:59:18 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:21 CST)" (scheduled at 2019-12-01 13:59:18+08:00)
+2019-12-01 13:59:18 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:18 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:19 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:21 CST)" executed successfully
+2019-12-01 13:59:21 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:24 CST)" (scheduled at 2019-12-01 13:59:21+08:00)
+2019-12-01 13:59:21 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:21 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:22 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:24 CST)" executed successfully
+2019-12-01 13:59:24 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:27 CST)" (scheduled at 2019-12-01 13:59:24+08:00)
+2019-12-01 13:59:24 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:24 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:25 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:27 CST)" executed successfully
+2019-12-01 13:59:27 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:30 CST)" (scheduled at 2019-12-01 13:59:27+08:00)
+2019-12-01 13:59:27 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:27 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:28 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:30 CST)" executed successfully
+2019-12-01 13:59:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:33 CST)" (scheduled at 2019-12-01 13:59:30+08:00)
+2019-12-01 13:59:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:31 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:33 CST)" executed successfully
+2019-12-01 13:59:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:36 CST)" (scheduled at 2019-12-01 13:59:33+08:00)
+2019-12-01 13:59:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:34 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:36 CST)" executed successfully
+2019-12-01 13:59:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:39 CST)" (scheduled at 2019-12-01 13:59:36+08:00)
+2019-12-01 13:59:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:37 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:39 CST)" executed successfully
+2019-12-01 13:59:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:42 CST)" (scheduled at 2019-12-01 13:59:39+08:00)
+2019-12-01 13:59:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:40 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:42 CST)" executed successfully
+2019-12-01 13:59:42 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:45 CST)" (scheduled at 2019-12-01 13:59:42+08:00)
+2019-12-01 13:59:42 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:42 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:43 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:45 CST)" executed successfully
+2019-12-01 13:59:45 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:48 CST)" (scheduled at 2019-12-01 13:59:45+08:00)
+2019-12-01 13:59:45 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:45 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:46 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:48 CST)" executed successfully
+2019-12-01 13:59:48 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:51 CST)" (scheduled at 2019-12-01 13:59:48+08:00)
+2019-12-01 13:59:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:49 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:51 CST)" executed successfully
+2019-12-01 13:59:51 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:54 CST)" (scheduled at 2019-12-01 13:59:51+08:00)
+2019-12-01 13:59:51 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:51 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:52 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:54 CST)" executed successfully
+2019-12-01 13:59:54 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:57 CST)" (scheduled at 2019-12-01 13:59:54+08:00)
+2019-12-01 13:59:54 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:54 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:55 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 13:59:57 CST)" executed successfully
+2019-12-01 13:59:57 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:00 CST)" (scheduled at 2019-12-01 13:59:57+08:00)
+2019-12-01 13:59:57 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 13:59:57 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 13:59:58 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:00 CST)" executed successfully
+2019-12-01 14:00:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:03 CST)" (scheduled at 2019-12-01 14:00:00+08:00)
+2019-12-01 14:00:00 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:00 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:01 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:03 CST)" executed successfully
+2019-12-01 14:00:03 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:06 CST)" (scheduled at 2019-12-01 14:00:03+08:00)
+2019-12-01 14:00:03 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:03 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:04 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:06 CST)" executed successfully
+2019-12-01 14:00:06 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:09 CST)" (scheduled at 2019-12-01 14:00:06+08:00)
+2019-12-01 14:00:06 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:06 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:07 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:09 CST)" executed successfully
+2019-12-01 14:00:09 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:12 CST)" (scheduled at 2019-12-01 14:00:09+08:00)
+2019-12-01 14:00:09 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:09 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:10 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:12 CST)" executed successfully
+2019-12-01 14:00:12 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:15 CST)" (scheduled at 2019-12-01 14:00:12+08:00)
+2019-12-01 14:00:12 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:12 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:13 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:15 CST)" executed successfully
+2019-12-01 14:00:15 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:18 CST)" (scheduled at 2019-12-01 14:00:15+08:00)
+2019-12-01 14:00:15 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:16 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:18 CST)" executed successfully
+2019-12-01 14:00:18 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:21 CST)" (scheduled at 2019-12-01 14:00:18+08:00)
+2019-12-01 14:00:18 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:18 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:19 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:21 CST)" executed successfully
+2019-12-01 14:00:21 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:24 CST)" (scheduled at 2019-12-01 14:00:21+08:00)
+2019-12-01 14:00:21 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:21 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:22 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:24 CST)" executed successfully
+2019-12-01 14:00:24 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:27 CST)" (scheduled at 2019-12-01 14:00:24+08:00)
+2019-12-01 14:00:24 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:24 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:25 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:27 CST)" executed successfully
+2019-12-01 14:00:27 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:30 CST)" (scheduled at 2019-12-01 14:00:27+08:00)
+2019-12-01 14:00:27 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:27 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:28 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:30 CST)" executed successfully
+2019-12-01 14:00:30 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:33 CST)" (scheduled at 2019-12-01 14:00:30+08:00)
+2019-12-01 14:00:30 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:30 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:31 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:33 CST)" executed successfully
+2019-12-01 14:00:33 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:36 CST)" (scheduled at 2019-12-01 14:00:33+08:00)
+2019-12-01 14:00:33 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:33 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:34 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:36 CST)" executed successfully
+2019-12-01 14:00:36 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:39 CST)" (scheduled at 2019-12-01 14:00:36+08:00)
+2019-12-01 14:00:36 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:36 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:37 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:39 CST)" executed successfully
+2019-12-01 14:00:39 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:42 CST)" (scheduled at 2019-12-01 14:00:39+08:00)
+2019-12-01 14:00:39 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:39 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:40 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:42 CST)" executed successfully
+2019-12-01 14:00:42 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:45 CST)" (scheduled at 2019-12-01 14:00:42+08:00)
+2019-12-01 14:00:42 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:42 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:43 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:45 CST)" executed successfully
+2019-12-01 14:00:45 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:48 CST)" (scheduled at 2019-12-01 14:00:45+08:00)
+2019-12-01 14:00:45 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:45 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:46 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:48 CST)" executed successfully
+2019-12-01 14:00:48 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:51 CST)" (scheduled at 2019-12-01 14:00:48+08:00)
+2019-12-01 14:00:48 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:48 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:49 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:51 CST)" executed successfully
+2019-12-01 14:00:51 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:54 CST)" (scheduled at 2019-12-01 14:00:51+08:00)
+2019-12-01 14:00:51 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:51 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:52 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:54 CST)" executed successfully
+2019-12-01 14:00:54 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:57 CST)" (scheduled at 2019-12-01 14:00:54+08:00)
+2019-12-01 14:00:54 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:54 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:55 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:00:57 CST)" executed successfully
+2019-12-01 14:00:57 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:00 CST)" (scheduled at 2019-12-01 14:00:57+08:00)
+2019-12-01 14:00:57 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:00:57 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:00:58 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:00 CST)" executed successfully
+2019-12-01 14:01:00 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:03 CST)" (scheduled at 2019-12-01 14:01:00+08:00)
+2019-12-01 14:01:00 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:00 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:01 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:03 CST)" executed successfully
+2019-12-01 14:01:03 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:06 CST)" (scheduled at 2019-12-01 14:01:03+08:00)
+2019-12-01 14:01:03 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:03 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:04 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:06 CST)" executed successfully
+2019-12-01 14:01:06 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:09 CST)" (scheduled at 2019-12-01 14:01:06+08:00)
+2019-12-01 14:01:06 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:06 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:07 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:09 CST)" executed successfully
+2019-12-01 14:01:09 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:12 CST)" (scheduled at 2019-12-01 14:01:09+08:00)
+2019-12-01 14:01:09 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:09 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:10 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:12 CST)" executed successfully
+2019-12-01 14:01:12 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:15 CST)" (scheduled at 2019-12-01 14:01:12+08:00)
+2019-12-01 14:01:12 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:12 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:13 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:15 CST)" executed successfully
+2019-12-01 14:01:15 base.py[line:123] INFO Running job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:18 CST)" (scheduled at 2019-12-01 14:01:15+08:00)
+2019-12-01 14:01:15 transport.py[line:1819] INFO Connected (version 1.99, client Cisco-1.25)
+2019-12-01 14:01:15 transport.py[line:1819] INFO Authentication (password) successful!
+2019-12-01 14:01:16 base.py[line:144] INFO Job "Config_comparison_and_to_db.monitor_config_change_and_to_db (trigger: interval[0:00:03], next run at: 2019-12-01 14:01:18 CST)" executed successfully
