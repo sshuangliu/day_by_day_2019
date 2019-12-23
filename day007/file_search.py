@@ -50,6 +50,7 @@ if __name__ == '__main__':
 #         print(os.path.join(root, name))
 #     for name in dirs:
 #         print(os.path.join(root, name))
+'''
 
 os.path.exists(test_file.txt)
 os.path.isfile("test-data")
@@ -96,3 +97,5 @@ for root, dirs, files in os.walk("D:\T1", topdown=True):
                     break
             break
     break
+
+'''
