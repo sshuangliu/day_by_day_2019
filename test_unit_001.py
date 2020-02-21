@@ -395,26 +395,72 @@ from datetime import datetime
 #     tkinter.mainloop()
 
 
-# 文件内容替换
-import os
-import re
+# # 文件内容替换
+# import os
+# import re
+#
+# # 遍历方式为以文件夹为主线遍历 root:当前遍历的文件夹绝对路径，dirs:当前遍历路径下文件夹的列表 files：当前遍历路径下文件的列表
+# for root, dirs, files in os.walk("D:\T1", topdown=True):
+#     for item in dirs:
+#         for root1, dirs1, files1 in os.walk(os.path.join(root, item), topdown=True):
+#             for i in files1:
+#                 if '.vmx' == os.path.splitext(i)[1]:
+#                     with open(os.path.join(root1, i), 'r+') as f: # + 以seek（teel）位置逐行覆盖写; w/w+:先清空，慎用
+#                         if re.findall(r'vmci0.present = "True"', f.read(10240)):
+#                             f.seek(0)
+#                             new_data = re.sub(r'vmci0.present = "True"', 'vmci0.present = "false"', f.read(10240),
+#                                               count=1)
+#                             f.seek(0)
+#                             f.write(new_data)
+#                             print('已修改:', os.path.join(root1, i))
+#                         else:
+#                             print('无需修改:', os.path.join(root1, i))
+#                     break
+#             break
+#     break
 
-# 遍历方式为以文件夹为主线遍历 root:当前遍历的文件夹绝对路径，dirs:当前遍历路径下文件夹的列表 files：当前遍历路径下文件的列表
-for root, dirs, files in os.walk("D:\T1", topdown=True):
-    for item in dirs:
-        for root1, dirs1, files1 in os.walk(os.path.join(root, item), topdown=True):
-            for i in files1:
-                if '.vmx' == os.path.splitext(i)[1]:
-                    with open(os.path.join(root1, i), 'r+') as f: # + 以seek（teel）位置逐行覆盖写; w/w+:先清空，慎用
-                        if re.findall(r'vmci0.present = "True"', f.read(10240)):
-                            f.seek(0)
-                            new_data = re.sub(r'vmci0.present = "True"', 'vmci0.present = "false"', f.read(10240),
-                                              count=1)
-                            f.seek(0)
-                            f.write(new_data)
-                            print('已修改:', os.path.join(root1, i))
-                        else:
-                            print('无需修改:', os.path.join(root1, i))
-                    break
-            break
-    break
+
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
+plt.rcParams['font.family'] = 'sans-serif'
+
+labels = ['python基础', 'python网络编程tcp/ip', 'http协议', 'Django', 'Ansible/Zabbix/ELK', '网络自动化运维项目开发实践','总课时']
+men_means = [18, 21, 9, 12, 6, 9, 75]
+women_means = [16.8, 14.8, 10.2, 9.2, 4.3, 0, 55.3]
+
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects1 = ax.bar(x - width/2, men_means, width, label='官网宣传课时')
+rects2 = ax.bar(x + width/2, women_means, width, label='实际课时')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('课时(H)')
+ax.set_title('课时对比')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rects1)
+autolabel(rects2)
+# fig.tight_layout()
+fig.autofmt_xdate()
+
+plt.savefig('class_time.png')
+plt.show()
