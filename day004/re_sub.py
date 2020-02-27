@@ -68,3 +68,10 @@ def ipv4add_def(match_obj):
 
 new_ipv4add = re.sub(r'\d{1,3}',ipv4add_def,ipv4add)
 print(new_ipv4add)
+
+re.sub(r'\d+$','1',ipv4add)
+re.sub(r'^\d+','1',ipv4add)
+
+
+re.findall(r'(\d)(\d+)',ipv4add)
+# [('2', '4'), ('5', '3'), ('1', '33'), ('2', '43')]

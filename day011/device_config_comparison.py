@@ -18,7 +18,7 @@ class Config_comparison(Device_ssh_001):
 
     def monitor_config_change(self):
         m = hashlib.md5()
-        cisco_return_values = re.search(r'hostname(.*)end', Device_ssh_001.ssh_get_config(self), re.DOTALL).group(1)
+        cisco_return_values = re.search(r'hostname(.*)end', Device_ssh_001.ssh_get_config(self), re.DOTALL).group(1) # 单行模式匹配 https://www.lfhacks.com/tech/python-re-single-multiline
         m.update(cisco_return_values.encode('utf-8'))
         cisco_md5_init_values = m.hexdigest()
 

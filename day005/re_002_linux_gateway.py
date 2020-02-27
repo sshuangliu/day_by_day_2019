@@ -19,7 +19,8 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 def re_gateway(infor01):
     route_list = re.findall(r'(?:(?:\d{1,3}\.){3}\d{1,3}\s+){3}UG', infor01)[0]
-    route_list = re.findall(r'\d+\.\d+\.\d+\.\d+\s+(\d+\.\d+\.\d+\.\d+)', route_list)[0]
+    route_list = re.findall(r'\d+\.\d+\.\d+\.\d+\s+(\d+\.\d+\.\d+\.\d+)', route_list)
+    print(route_list)
     return route_list
 
 

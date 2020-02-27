@@ -5,7 +5,7 @@
 #@File  : string_slice.py
 
 ##1:字符串拼接
-a='QYTANG\'day'
+a='shuang\'day'
 b=' 2014-9-28'
 print(a+b)
 

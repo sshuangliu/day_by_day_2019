@@ -6,7 +6,9 @@
 
 import random
 
-a='.'.join('%s'%random.randint(0, 255) for i in range(4))
+['%s' % random.randint(0, 255) for i in range(4)]
+# ['100', '151', '70', '103']
+a='.'.join('%s'%random.randint(0, 255) for i in range(4)) # join 接一个可迭代的对象
 print(a)
 
 

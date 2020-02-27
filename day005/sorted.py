@@ -16,5 +16,4 @@ for i in range(len(L2)):
         if L2[m] > L2[m+1]:
             L2[m], L2[m+1] = L2[m+1], L2[m]
 
-for i in range(len(L2)):
-    print(L1[i], L2[i])
+print(L2)
