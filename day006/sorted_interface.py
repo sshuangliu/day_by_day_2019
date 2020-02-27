@@ -16,3 +16,9 @@ new_port_list = sorted(port_list, key=lambda x: (
     int(re.findall(r'\d{1,3}', x)[0]), int(re.findall(r'\d{1,3}', x)[1]), int(re.findall(r'\d{1,3}', x)[2]),
     int(re.findall(r'\d{1,3}', x)[3])))
 print(new_port_list)
+
+dicts = {'a': 4, 'b': 2, 'c': 9}
+
+a = [{x: y} for x, y in dicts.items()]
+
+new_dicts = sorted(list({'a': 4, 'b': 2, 'c': 9}.items()), key=lambda x: x[1])
