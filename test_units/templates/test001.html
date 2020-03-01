@@ -9,7 +9,7 @@
   {% else %}
     {% for i in range(page_num|int)  %}
     <a href="/page/{{ i }}">{{ i }}</a>
-  {% endfor %}
+    {% endfor %}
   {% endif %}
 {% endif %}
   <form action="/test01" method="post">

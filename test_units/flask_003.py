@@ -17,7 +17,7 @@ def test001():
 @app.route('/test01', methods=['POST'])
 def test002():
     page_list = request.form['page_num']
-    if int(page_list) > 0:
+    if int(page_list) > 0: # 可以不用判断，模板已有判断
         return render_template('test001.html', page_num=page_list)
     else:
         return render_template('test001.html', page_num=page_list, message='请输入整数!')
@@ -26,5 +26,5 @@ def test002():
 if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
-        port=7777,
+        port=7778,
         debug=True)
