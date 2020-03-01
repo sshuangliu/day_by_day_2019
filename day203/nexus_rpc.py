@@ -10,7 +10,7 @@ import requests
 from pprint import pprint
 
 
-def json_config(*cmd_list):
+def json_config(*cmd_list):  # 可变参数
     # print(cmd_list)
     json_data = []
     id = 1
@@ -46,7 +46,7 @@ if __name__ == '__main__':
         post_config(*cmd_list)[0][3]['result']['body']['TABLE_vrf']['ROW_vrf']['TABLE_addrf']['ROW_addrf'][
             'TABLE_prefix'][
             'ROW_prefix']
-    print('%-20s%-20s%-20s%-20s' % ('ipprefix', 'ipnexthop', 'ifname', 'clientname'))
+    print('%-20s%-20s%-20s%-20s' % ('ipprefix', 'ipnexthop', 'ifname', 'clientname'))  # 左对齐
     for item in results:
         # print(type(item["ucast-nhops"]))
         if item["ucast-nhops"] == 1:  # 当某条前缀有负载路径时，数据格式不同

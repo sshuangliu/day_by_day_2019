@@ -17,7 +17,7 @@ def udp_client(ip, port, data_list):
     pkt_type 2byte
     seq_id   4byte
     lengths  4byte
-    md5      16byte  #  教主  超过long long int 8字节大小  按整数struck.pack() 如何操作？
+    md5      16byte  #    超过long long int 8字节大小  按整数struck.pack() 如何操作？
     """
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     address = ip, port

@@ -64,7 +64,7 @@ class SyslogUDPHandler(socketserver.BaseRequestHandler):
             if re.match(r'^<(\d+)>(\d+): \*(.*): %(\w+)-(\d)-(\w+): (.*)$', data):
                 syslog_infor = re.match(r'^<(\d+)>(\d+): \*(.*): %(\w+)-(\d)-(\w+): (.*)$', data).groups()
                 facility_value = facility_dict[int(syslog_infor[0]) >> 3]  # 前五位二进制
-                severity_level = severity_level_dict[(int(syslog_infor[0]) << 5 & 0xff) >> 5]  # 后三位二进制
+                severity_level = severity_level_dict[(int(syslog_infor[0]) << 5 & 0xff) >> 5]  # 后三位二进制 0xff保证8位
                 log_id = int(syslog_infor[1])
                 log_time = parser.parse(syslog_infor[2]).strftime("%Y-%m-%d %H:%M:%S")
                 log_type = syslog_infor[3]

@@ -63,7 +63,7 @@ class Config_comparison_and_to_db(Device_ssh_001):
         c = conn.cursor()
 
         #  查询表
-        # sql = '''SELECT ? FROM running_configure_Backup'''  # 教主 在select后的的 这种占位符不行吗？？
+        # sql = '''SELECT ? FROM running_configure_Backup'''  # 在select后的的 这种占位符不行吗？？
         sql = f'''SELECT {column} FROM running_configure_Backup'''
         # results = c.execute(sql, (column,))
         results = c.execute(sql)

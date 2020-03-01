@@ -7,7 +7,12 @@
 # http://tools.ietf.org/html/rfc4291#section-2.5.1 ipv6编址
 # https://www.runoob.com/python3/python3-basic-operators.html 运算符
 
-
+# 任何进制转十进制 int，10进制转其他进制
+int('oxf', 16)
+int('01010', 2)
+hex(15)
+bin(4)
+oct(2)
 
 # a = 0011 1100
 #

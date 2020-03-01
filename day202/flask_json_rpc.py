@@ -44,15 +44,15 @@ def cmd():
     print(request.headers)
     print(request.get_json())
     if request.get_json().get('cmd'):
-        result = os.popen(request.get_json().get('cmd')).read().encode('utf-8')  # byte类型，即二进制
+        result = os.popen(request.get_json().get('cmd')).read().encode('utf-8')  # 字符串encode后为byte类型，即二进制
         print(type(result))
-        result = base64.b64encode(result).decode('utf-8')  # B64编码对象只能为byte类型，编码后也为byte类型，decode后为
+        result = base64.b64encode(result).decode('utf-8')  # B64编码对象只能为byte类型，编码后也为byte类型，decode后为字符串
         print(type(result))
         print(result)
         return {'result': result}  # 构造json字符串，值必须为字符串（byte为不可序列化的对象）
 
 
-@app.route('/download/<filename>', methods=['GET'])
+@app.route('/download/<filename>', methods=['GET'])  # 动态路由
 def down(filename):
     UPLOAD_FOLDER = '/day_by_day_python_001/test_units'
     if os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):  # 判断文件是否存在，非文件夹
@@ -65,7 +65,7 @@ def down(filename):
 @app.route('/upload/<filename>', methods=['PUT'])
 def up(filename):
     UPLOAD_FOLDER = '/day_by_day_python_001/test_units'
-    date1 = base64.b64decode(request.get_json().get('file'))
+    date1 = base64.b64decode(request.get_json().get('file')) # date1是byte类型
     with open(os.path.join(UPLOAD_FOLDER, filename), 'wb') as f:
         f.write(date1)
     return {'result': True}

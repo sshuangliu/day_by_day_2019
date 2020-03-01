@@ -23,7 +23,7 @@
 11：vi start.sh 后端服务器ip 端口号
     HOST='192.168.59.37'
     PORT='8088'
-12：./start.sh
+12：./start.sh (开启服务)
 13：guest/guest
 
 

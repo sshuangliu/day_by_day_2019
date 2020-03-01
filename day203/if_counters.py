@@ -7,6 +7,8 @@
 from cli import *
 import sys, time
 
+# https://developer.cisco.com/docs/nx-os/#!example-scripts/example-deltacounters-py
+
 # 收集客户输入的第一个参数 接口名
 ifName = sys.argv[1]
 # 收集客户输入的第二个参数 延时

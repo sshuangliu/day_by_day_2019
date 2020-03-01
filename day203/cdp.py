@@ -9,6 +9,7 @@ from cisco.interface import *
 import json
 import re
 
+# https://developer.cisco.com/docs/nx-os/
 
 def getupintlist():
     # 查看接口摘要

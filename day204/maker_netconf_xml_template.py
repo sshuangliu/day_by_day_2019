@@ -7,7 +7,7 @@
 # https://ke.qq.com/course/271956?tuin=24199d8a
 import re
 from jinja2 import Template
-tem_path = './jinja2/'
+tem_path = './netconf_xml_templates/'
 
 
 def netconf_if_ip(interface, address, mask):

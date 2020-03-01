@@ -11,7 +11,7 @@ from day203.auth_infor import rest_session, get_token, ipadd, headers
 import requests
 
 
-def svi_cnofig_session(*, vlanid, adminSt='up', descr='python_test', **cmdlist):  # 可以update cmdlist字典里面的扩展字段到json date
+def svi_cnofig_session(*, vlanid, adminSt='up', descr='python_test', **cmdlist):  # *后面的参数被视为命名关键字参数 （不匹配关键字的参数送到cmdlist字典里面，可后续基于key做in条件判断, 生产不同json date）
     svi_url = f'https://{ipadd}/api/node/mo/sys/intf/svi-[{vlanid}].json'
     new_headers = headers.copy()
     new_headers['content-type'] = 'application/json'
