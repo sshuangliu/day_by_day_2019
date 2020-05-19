@@ -35,9 +35,6 @@
 
 
 # import ifaddr as ifaddr
-import datetime as datetime
-from kamene.all import *
-import logging
 
 #
 # logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
@@ -166,7 +163,6 @@ import logging
 
 
 # -*- coding: utf-8 -*-
-import numpy as np
 # import matplotlib.pyplot as plt
 # import matplotlib.dates as mdate
 # import pandas as pd
@@ -191,8 +187,6 @@ import numpy as np
 # plt.xticks(rotation=45)  # 旋转45度显示
 # legend = ax.legend(loc='lower center', shadow=False)
 # plt.show()
-
-from datetime import datetime
 
 # import random
 # import time
@@ -228,8 +222,6 @@ from datetime import datetime
 # print(y1)
 # print(y2)
 
-
-import time
 
 # print ("time.time(): %f " %  time.time())
 # print(type(time.time()))
@@ -294,7 +286,6 @@ import time
 #
 # scheduler.start()
 
-from datetime import datetime
 # import os
 # from apscheduler.schedulers.blocking import BlockingScheduler
 #
@@ -466,4 +457,36 @@ from datetime import datetime
 # plt.show()
 
 
+# import multiprocessing
+# import time
+#
+#
+# def process(index):
+#     print(f'process {index}')
+#     time.sleep(index)
+#
+#
+# for i in range(5):  # 非常规意义的按序的for循环，只是用于分配 创建进程的数量，
+#     p = multiprocessing.Process(target=process, args=[i])
+#     p.start()
+#     print(f'haha {i}')
+# print(f'cpu number {multiprocessing.cpu_count()}')
+# for p in multiprocessing.active_children():
+#     print(f'chile process name : {p.name} id : {p.pid}')
+# print('process ended')
 
+# from wordcloud import WordCloud
+# import matplotlib.pyplot as plt
+# import jieba
+#
+# filename = "COVER-1.TXT"
+# with open(filename) as f:
+#     mytext = f.read()
+#
+# mytext = " ".join(jieba.cut(mytext))
+# wordcloud = WordCloud().generate(mytext)
+#
+#
+# plt.imshow(wordcloud, interpolation='bilinear')
+# plt.axis("off")
+# plt.show()
